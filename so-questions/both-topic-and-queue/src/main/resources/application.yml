@@ -1,0 +1,22 @@
+server:
+  port: 9015
+spring:
+  jms:
+    pub-sub-domain: true
+    template:
+      delivery-mode: persistent
+      qos-enabled: true
+    listener:
+      acknowledge-mode: client
+  main:
+    web-application-type: none
+
+amqphub:
+  amqp10jms:
+    remote-url: amqp://localhost:61616
+    username: admin
+    password: admin
+    clientId: my_topic_client
+
+addresses:
+  multicast_topic_address: topic_address
